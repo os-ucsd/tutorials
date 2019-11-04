@@ -4,7 +4,7 @@ export default Layout;
 
 export const meta = {
   title: "How to create a Github-synced Website as a UCSD Student",
-  publish: new Date(),
+  publish: new Date("2019-10-31T12:00:00Z"),
   authors: [
     {name: "Alex Garcia", github: "asg017"}
   ]

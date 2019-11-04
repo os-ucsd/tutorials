@@ -1,4 +1,4 @@
-import { meta as acswebMeta } from "pages/posts/2019/acsweb-site/index.md";
+import { meta as metaContributeMeta } from "pages/meta/contributing.md";
 
 const dateFormat = {
   day: "numeric",
@@ -6,8 +6,8 @@ const dateFormat = {
   year: "numeric"
 };
 
-export default function Tutorials(props) {
-  const ts = [{ meta: acswebMeta, link: "./posts/2019/acsweb-site" }];
+export default function Meta(props) {
+  const ts = [{meta: metaContributeMeta, link: "./meta/contributing"}];
   return (
     <div>
       {ts.map(tutorial => {

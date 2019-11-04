@@ -1,4 +1,5 @@
 import Head from "next/head";
+import SocialMedia from "./SocialMedia";
 
 const layoutStyle = {
   margin: 20,
@@ -14,15 +15,11 @@ export default function BaseLayout(props) {
           href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css"
-          integrity="sha256-HbgiGHMLxHZ3kkAiixyvnaaZFNjNWLYKD/QG6PWaQPc="
-          crossorigin="anonymous"
         />
       </Head>
       <div className="main">
-        {props.children}
+        <div>{props.children}</div>
+        <SocialMedia />
       </div>
       <style global jsx>{`
         h1,

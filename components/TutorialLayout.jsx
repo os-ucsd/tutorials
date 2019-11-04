@@ -1,55 +1,46 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Byline from './Byline'
+import Link from "next/link";
+import Byline from "./Byline";
+import CreateTutorialUpsell from "./CreateTutorialUpsell";
+import BaseLayout from "./BaseLayout";
+import colors from "./colors";
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
+function HomeHeader(props) {
+  return (
+    <div className="HomeHeader">
+      <Link href="/">
+        🏠 Home
+      </Link>
+      <style jsx>{`
+        .HomeHeader {
+          font-weight: 700;
+          font-size: 1.2rem;
+          color: ${colors.ORANGE1} !important;
+        }
+      `}</style>
+    </div>
+  );
 }
 
 export default function Layout(props) {
-  const {meta} = props;
+  const { meta } = props;
   return (
-    <div style={layoutStyle}>
-      <Head>
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"/>
-        {/*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css" integrity="sha256-HbgiGHMLxHZ3kkAiixyvnaaZFNjNWLYKD/QG6PWaQPc=" crossorigin="anonymous" />*/}
-      </Head>
-      <div className="main">
-        <div className="Home-Header">
-          <Link href="/">
-            🏠 Home
-          </Link>
-        </div>
+    <BaseLayout>
+      <div className="tutorial-main">
+        <HomeHeader />
         <h1>{meta.title}</h1>
-        <Byline authors={meta.authors}/>
-        <hr/>
-        {props.children}
+        <Byline authors={meta.authors} />
+        <hr />
+        <div>{props.children}</div>
+        <hr />
+        <div>
+          <CreateTutorialUpsell />
+        </div>
       </div>
-      <style global jsx>{`
-        h1,
-        a {
+      <style jsx>{`
+        img {
+          width: 100%;
         }
-        body {
-          font-family:  "Roboto Mono";
-    font-style: normal;
-        }
-.main {
-  margin: auto;
-  max-width: 42rem;
-  padding:2.625rem 1.3125rem;
-  min-height:100vh;
-}
-
-.Home-Header {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-img {
-  width: 100%;
-}
       `}</style>
-    </div>
-  )
+    </BaseLayout>
+  );
 }
