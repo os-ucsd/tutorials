@@ -27,6 +27,7 @@ jobs:
       uses: rtCamp/action-slack-notify@v1.0.0
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: website-updates
+        SLACK_ICON: "https://avatars0.githubusercontent.com/u/51001618?v=4"
+        SLACK_TITLE: "Message"
         SLACK_MESSAGE: "http://os-ucsd.ucsd.edu/tutorials has been updated by ${{ github.actor }}!"
-      
-
