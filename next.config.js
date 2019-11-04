@@ -7,7 +7,7 @@ const withMDX = require('@next/mdx')({
 
 module.exports = withMDX({
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/bitmoji-tutorial' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/tutorials' : '',
   webpack(config, options) {
      config.resolve.alias = {
        ...config.resolve.alias,
