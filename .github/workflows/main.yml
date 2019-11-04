@@ -23,4 +23,9 @@ jobs:
         password: ${{ secrets.ACSWEB_PASSWORD }}
         local_dir: "./out/"
         remote_dir: "./tutorials/"
+    - name: Slack Notify
+      uses: rtCamp/action-slack-notify@v1.0.0
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      
 
