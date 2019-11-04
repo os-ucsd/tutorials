@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
     "start": "next",
-    "deploy": "next build && next export && gh-pages -d out/"
+    "build": "next build",
+    "export": "next export"
   },
   "author": "",
   "license": "MIT",

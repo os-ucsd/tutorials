@@ -1,0 +1,33 @@
+name: Deploy to os-ucsd.ucsd.edu
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1.1.0
+    - run: npm install
+    - run: npm run build
+    - run: npm run export
+    - name: Deploy to os-ucsd.ucsd.edu
+      uses: os-ucsd/acsweb-deploy-action@0.1.1
+      with:
+        username: os-ucsd
+        password: ${{ secrets.ACSWEB_PASSWORD }}
+        local_dir: "./out/"
+        remote_dir: "./tutorials/"
+    - name: Slack Notify
+      uses: rtCamp/action-slack-notify@v1.0.0
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: website-updates
+        SLACK_ICON: "https://avatars0.githubusercontent.com/u/51001618?v=4"
+        SLACK_TITLE: "Message"
+        SLACK_MESSAGE: "http://os-ucsd.ucsd.edu/tutorials has been updated by ${{ github.actor }}!"
