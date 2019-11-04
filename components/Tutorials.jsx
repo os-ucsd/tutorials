@@ -7,7 +7,7 @@ const dateFormat = {
 };
 
 export default function Tutorials(props) {
-  const ts = [{ meta: acswebMeta, link: "./pages/posts/2019/acsweb-site" }];
+  const ts = [{ meta: acswebMeta, link: "./posts/2019/acsweb-site" }];
   return (
     <div>
       {ts.map(tutorial => {
