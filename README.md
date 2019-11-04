@@ -1,2 +1,3 @@
-# tutorials
-A site to host all of Open Source @ UCSD's tutorials
+# Open Source @ UCSD Tutorials
+
+A site to host all of our tutorials!
