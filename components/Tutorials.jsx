@@ -1,4 +1,4 @@
-import { meta as acswebMeta } from "pages/acsweb-site/index.md";
+import { meta as acswebMeta } from "pages/posts/2019/acsweb-site/index.md";
 
 const dateFormat = {
   day: "numeric",
@@ -7,7 +7,7 @@ const dateFormat = {
 };
 
 export default function Tutorials(props) {
-  const ts = [{ meta: acswebMeta, link: "./acsweb-site" }];
+  const ts = [{ meta: acswebMeta, link: "./pages/posts/2019/acsweb-site" }];
   return (
     <div>
       {ts.map(tutorial => {
